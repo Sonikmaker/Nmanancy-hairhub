@@ -1,1 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NmaNancy Hairhub | Beauty & Hair Salon</title>
+<meta name="description" content="NmaNancy Hairhub — professional hair and beauty services in Ugwu Orji, Owerri North, Imo, Nigeria. Open daily 8am–8pm.">
+<style>
+:root{--dark:#17110f;--gold:#c89b5b;--cream:#fbf6ef;--brown:#5c4032;--white:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--dark);background:var(--cream);line-height:1.6}
+header{position:sticky;top:0;z-index:10;background:rgba(23,17,15,.96);color:#fff;padding:18px 6%;display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:Georgia,serif;font-size:24px;font-weight:bold}.logo span{color:var(--gold)}
+nav a{color:#fff;text-decoration:none;margin-left:24px;font-size:14px}
+.btn{display:inline-block;background:var(--gold);color:#17110f;padding:13px 22px;border-radius:30px;text-decoration:none;font-weight:bold}
+.hero{min-height:78vh;display:flex;align-items:center;padding:80px 8%;background:linear-gradient(90deg,rgba(23,17,15,.92),rgba(23,17,15,.55)),url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1800&q=85') center/cover;color:#fff}
+.hero-content{max-width:700px}.eyebrow{color:#e5bd7c;text-transform:uppercase;letter-spacing:3px;font-size:13px;font-weight:bold}
+h1{font:700 clamp(48px,7vw,82px)/1.02 Georgia,serif;margin:16px 0 22px}
+.hero p{font-size:19px;max-width:600px;color:#eee;margin-bottom:30px}
+section{padding:80px 7%}.section-head{text-align:center;max-width:720px;margin:0 auto 45px}.section-head h2{font:700 44px Georgia,serif;margin:10px 0}.section-head p{color:#6f625b}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{background:#fff;padding:30px;border-radius:18px;box-shadow:0 8px 30px rgba(40,25,15,.07)}.card h3{font:700 24px Georgia,serif;margin-bottom:8px}.card p{color:#6f625b}
+.about{background:#fff}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}.about-image{height:500px;border-radius:25px;background:url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=85') center/cover}
+.about h2{font:700 48px Georgia,serif;margin:12px 0 18px}.checks{list-style:none;margin:25px 0}.checks li{margin:12px 0}.checks li:before{content:"✓";color:var(--gold);font-weight:bold;margin-right:10px}
+.cta{background:var(--dark);color:#fff;text-align:center}.cta h2{font:700 45px Georgia,serif;margin-bottom:15px}.cta p{color:#ddd;margin-bottom:25px}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:30px}.contact-box{background:#fff;padding:32px;border-radius:18px}.contact-box h3{font:700 27px Georgia,serif;margin-bottom:15px}.contact-box p{margin:10px 0;color:#6f625b}
+footer{background:#100b09;color:#ddd;padding:35px 7%;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gallery-item{height:300px;border-radius:18px;overflow:hidden;background:#ddd;position:relative}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.gallery-item:hover img{transform:scale(1.05)}
+.gallery-item.tall{height:390px}
+@media(max-width:800px){.gallery{grid-template-columns:repeat(2,1fr)}.gallery-item,.gallery-item.tall{height:240px}}
+
+@media(max-width:800px){nav{display:none}.grid,.about-grid,.contact{grid-template-columns:1fr}.hero{min-height:75vh;padding:70px 7%}section{padding:60px 6%}.about-image{height:350px}h1{font-size:52px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">NmaNancy <span>Hairhub</span></div>
+  <nav>
+    <a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#about">About</a><a href="#booking">Book</a><a href="#contact">Contact</a>
+  </nav>
+  <a class="btn" href="https://wa.me/2347065963565?text=Hello%20NmaNancy%20Hairhub%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank">Book Now</a>
+</header>
+
+<main>
+<section class="hero">
+<div class="hero-content">
+<div class="eyebrow">Beauty • Hair • Confidence</div>
+<h1>Your beauty. Your style. Your statement.</h1>
+<p>Welcome to NmaNancy Hairhub — a professional beauty destination in Ugwu Orji, Owerri North, where beautiful hair and great service come together.</p>
+<a class="btn" href="#booking">Book an Appointment</a>
+</div>
+</section>
+
+<section id="services">
+<div class="section-head"><div class="eyebrow">What we do</div><h2>Our Services</h2><p>Tell us the look you want and let our team help you bring it to life.</p></div>
+<div class="grid">
+<div class="card"><h3>Hair Styling</h3><p>Professional styling for everyday looks, special occasions and events.</p></div>
+<div class="card"><h3>Braids & Protective Styles</h3><p>Beautiful protective styles designed around your preferred look.</p></div>
+<div class="card"><h3>Hair Treatment</h3><p>Care-focused treatments to help keep your hair looking healthy and beautiful.</p></div>
+<div class="card"><h3>Wig Services</h3><p>Styling and finishing services for a polished, confident look.</p></div>
+<div class="card"><h3>Makeup & Beauty</h3><p>Beauty services for occasions when you want to look and feel your best.</p></div>
+<div class="card"><h3>Custom Requests</h3><p>Have something specific in mind? Contact us to discuss your desired service.</p></div>
+</div>
+</section>
+
+
+<section id="gallery">
+<div class="section-head"><div class="eyebrow">Our work</div><h2>Beauty in Every Detail</h2><p>Explore the salon atmosphere and inspiration for your next look.</p></div>
+<div class="gallery">
+  <div class="gallery-item tall"><img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=900&q=85" alt="Professional hairstyling"></div>
+  <div class="gallery-item"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=85" alt="Hair styling and beauty"></div>
+  <div class="gallery-item tall"><img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=900&q=85" alt="Salon beauty service"></div>
+  <div class="gallery-item"><img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=900&q=85" alt="Hair salon interior"></div>
+  <div class="gallery-item"><img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=900&q=85" alt="Beautiful hair styling"></div>
+  <div class="gallery-item tall"><img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=900&q=85" alt="Salon hair treatment"></div>
+  <div class="gallery-item"><img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=900&q=85" alt="Beauty look"></div>
+  <div class="gallery-item"><img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=85" alt="Modern hair salon"></div>
+</div>
+</section>
+
+<section class="about" id="about">
+<div class="about-grid">
+<div class="about-image"></div>
+<div>
+<div class="eyebrow">About the salon</div>
+<h2>Beauty starts with how you feel.</h2>
+<p>NmaNancy Hairhub is a beauty and hair salon serving clients in Ugwu Orji and the wider Owerri area. Our goal is simple: give every client attentive service and a finished look they can feel confident about.</p>
+<ul class="checks"><li>Professional salon experience</li><li>Convenient daily opening hours</li><li>Appointment bookings by WhatsApp</li><li>Personalized attention to your desired look</li></ul>
+<a class="btn" href="tel:+2347065963565">Call 0706 596 3565</a>
+</div>
+</div>
+</section>
+
+
+<section id="booking" class="cta">
+<div class="section-head"><div class="eyebrow">Appointments</div><h2>Book Your Appointment</h2>
+<p>Choose your preferred service, date and time. We'll receive your request and confirm it.</p></div>
+<div style="max-width:620px;margin:0 auto;background:#fff;color:#17110f;padding:28px;border-radius:18px;text-align:left">
+<form id="bookingForm">
+<input required name="name" placeholder="Your name" style="width:100%;padding:13px;margin:7px 0;box-sizing:border-box">
+<input required name="phone" placeholder="Phone / WhatsApp number" style="width:100%;padding:13px;margin:7px 0;box-sizing:border-box">
+<select required name="service" id="serviceSelect" style="width:100%;padding:13px;margin:7px 0;box-sizing:border-box"></select>
+<input required type="date" name="date" style="width:100%;padding:13px;margin:7px 0;box-sizing:border-box">
+<input required type="time" name="time" min="08:00" max="20:00" style="width:100%;padding:13px;margin:7px 0;box-sizing:border-box">
+<textarea name="notes" placeholder="Anything we should know?" style="width:100%;padding:13px;margin:7px 0;box-sizing:border-box"></textarea>
+<button class="btn" type="submit" style="border:0;cursor:pointer">Request Appointment</button>
+<p id="bookingMsg"></p>
+</form></div></section>
+
+
+<section id="contact">
+<div class="section-head"><div class="eyebrow">Visit us</div><h2>Contact NmaNancy Hairhub</h2></div>
+<div class="contact">
+<div class="contact-box"><h3>Salon Details</h3>
+<p><strong>Address:</strong> 15 Samek Rd, Ugwu Orji, Owerri North, Imo, Nigeria</p>
+<p><strong>Phone:</strong> <a href="tel:+2347065963565">0706 596 3565</a></p>
+<p><strong>Hours:</strong> Monday–Sunday, 8:00 AM–8:00 PM</p></div>
+<div class="contact-box"><h3>Quick Booking</h3><p>Send us a message with the service you want and your preferred date and time.</p><br>
+<a class="btn" href="https://wa.me/2347065963565?text=Hello%20NmaNancy%20Hairhub%2C%20I%27d%20like%20to%20make%20an%20appointment." target="_blank">Message on WhatsApp</a></div>
+</div>
+</section>
+</main>
+
+<footer><div>© 2026 NmaNancy Hairhub. All rights reserved.</div><div>Ugwu Orji • Owerri North • Imo</div></footer>
+
+<script>
+fetch('/api/services').then(r=>r.json()).then(items=>{
+ const s=document.getElementById('serviceSelect');
+ s.innerHTML='<option value="">Select a service</option>'+items.map(x=>'<option>'+x.name+'</option>').join('');
+});
+document.getElementById('bookingForm').addEventListener('submit', async e=>{
+ e.preventDefault(); const data=Object.fromEntries(new FormData(e.target));
+ const r=await fetch('/api/appointments',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+ const j=await r.json(); const m=document.getElementById('bookingMsg');
+ m.textContent=r.ok?'Thank you! Your appointment request has been received. We will confirm it shortly.':(j.error||'Something went wrong.');
+ if(r.ok)e.target.reset();
+});
+</script>
+</body>
+</html>
 
