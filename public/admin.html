@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NmaNancy Hairhub — Admin</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f7f1e9;color:#211713;margin:0}
+header{background:#17110f;color:#fff;padding:22px 6%;display:flex;justify-content:space-between;align-items:center}
+h1,h2{font-family:Georgia,serif}.wrap{max-width:1100px;margin:35px auto;padding:0 20px}
+.panel{background:#fff;border-radius:16px;padding:22px;margin-bottom:20px;box-shadow:0 8px 25px #0000000d}
+input,select,button{padding:11px;border:1px solid #ddd;border-radius:8px;margin:5px}
+button{background:#c89b5b;border:0;font-weight:bold;cursor:pointer}
+table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:12px;border-bottom:1px solid #eee}
+.muted{color:#777}.login{max-width:450px;margin:100px auto}
+</style>
+</head>
+<body>
+<header><strong>NmaNancy Hairhub</strong><span>Admin Dashboard</span></header>
+<div class="wrap">
+<div id="login" class="panel login">
+<h2>Admin Login</h2><p class="muted">Enter your private admin key.</p>
+<input id="key" type="password" placeholder="Admin key" style="width:90%"><button onclick="login()">Login</button>
+<p id="err"></p>
+</div>
+<div id="app" style="display:none">
+<div class="panel"><h2>Appointments</h2><button onclick="load()">Refresh</button><div id="appointments"></div></div>
+<div class="panel"><h2>Services</h2>
+<input id="sname" placeholder="Service name"><input id="sprice" placeholder="Price"><input id="sduration" placeholder="Duration">
+<button onclick="addService()">Add Service</button><div id="services"></div></div>
+</div>
+</div>
+<script>
+let KEY="";
+async function login(){
+ KEY=document.getElementById("key").value;
+ const r=await fetch("/api/appointments",{headers:{"x-admin-key":KEY}});
+ if(!r.ok){document.getElementById("err").textContent="Invalid admin key.";return}
+ document.getElementById("login").style.display="none";document.getElementById("app").style.display="block";load();
+}
+async function load(){
+ const a=await fetch("/api/appointments",{headers:{"x-admin-key":KEY}}).then(r=>r.json());
+ document.getElementById("appointments").innerHTML="<table><tr><th>Date</th><th>Time</th><th>Customer</th><th>Phone</th><th>Service</th><th>Status</th><th></th></tr>"+
+ a.map(x=>`<tr><td>${x.date}</td><td>${x.time}</td><td>${x.name}</td><td>${x.phone}</td><td>${x.service}</td><td><select onchange="status(${x.id},this.value)">${["pending","confirmed","completed","cancelled"].map(s=>`<option ${s==x.status?"selected":""}>${s}</option>`).join("")}</select></td><td><button onclick="del(${x.id})">Delete</button></td></tr>`).join("")+"</table>";
+ const s=await fetch("/api/services/all",{headers:{"x-admin-key":KEY}}).then(r=>r.json());
+ document.getElementById("services").innerHTML="<table><tr><th>Service</th><th>Price</th><th>Duration</th><th>Active</th></tr>"+
+ s.map(x=>`<tr><td>${x.name}</td><td>${x.price}</td><td>${x.duration}</td><td><input type="checkbox" ${x.active?"checked":""} onchange="editService(${x.id},'${x.name.replaceAll("'","\\\\'")}', '${x.price}', '${x.duration}', this.checked)"></td></tr>`).join("")+"</table>";
+}
+async function status(id,status){await fetch("/api/appointments/"+id,{method:"PATCH",headers:{"Content-Type":"application/json","x-admin-key":KEY},body:JSON.stringify({status})});}
+async function del(id){if(confirm("Delete this appointment?")){await fetch("/api/appointments/"+id,{method:"DELETE",headers:{"x-admin-key":KEY}});load()}}
+async function addService(){let name=sname.value,price=sprice.value,duration=sduration.value;if(!name)return;await fetch("/api/services",{method:"POST",headers:{"Content-Type":"application/json","x-admin-key":KEY},body:JSON.stringify({name,price,duration})});sname.value=sprice.value=sduration.value="";load()}
+async function editService(id,name,price,duration,active){await fetch("/api/services/"+id,{method:"PATCH",headers:{"Content-Type":"application/json","x-admin-key":KEY},body:JSON.stringify({name,price,duration,active})});}
+</script>
+</body></html>
